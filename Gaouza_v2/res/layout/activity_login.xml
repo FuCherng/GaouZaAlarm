@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
          android:layout_below="@+id/user_name"
-        android:text="Pwd" />
+        android:text="Pwd hahahaha" />
 
     <Button
         android:id="@+id/Btn_login"
