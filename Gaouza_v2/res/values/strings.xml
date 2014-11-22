@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gaouza_v2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main_m__alarm_request">MainM_AlarmRequest</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_m__my_alarm">MainM_MyAlarm</string>
+    <string name="title_activity_send_alarm">SendAlarm</string>
+    <string name="title_activity_wake">Wake</string>
+
+</resources>
