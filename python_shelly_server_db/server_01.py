@@ -86,6 +86,63 @@ class Hello:
 
     #================================ Function : Waker : set morning ===============================
     @cherrypy.expose
+    def search_alarms(self,user_id):
+        # Search user's friends...
+        try:
+            data = self.db.Friends.find_one({"u_id": user_id})
+        except Exception, error:
+            return "No friends"
+        tmp = str(data).find("'agree'")
+        tmp = tmp + 9
+        endtmp = tmp
+        while str(data)[endtmp] != ']':
+            endtmp = endtmp+1
+        friendstring = str(data)[tmp+3: endtmp-1]
+        friendlist = friendstring.split("', u'")
+        #print friendlist[0] + ", " + friendlist[1] + ", " + friendlist[2]
+        # for each friend, check whether exiting alarms or not
+        level1 = False
+        level2 = False
+        all = list()
+        for i in range(0, len(friendlist), 1):
+            print str(friendlist[i])
+            try:
+                # friend has alarm is alive
+                IsAlarm = self.db.Alarm.find_one({"u_id": str(friendlist[i]), "alive": True})
+                #print IsAlarm
+                if IsAlarm is None:
+                    print "Find no alarm"
+                    level1 = True
+            except Exception, error:
+                print str(IsAlarm)
+            if level1 == False:
+                print "hello"
+                try:
+                    IsWaker = self.db.Wakers.find_one({"u_id": user_id, "who": friendlist[i]})
+                    if IsWaker is None:
+                        print "not yet be his(her) waker"
+                        level2 = True
+                        try:
+                            IsFull10 = self.db.Wakers.find({"who": friendlist[i]}).count()
+                            print IsFull10
+                        except Exception, error:
+                            #Cardtmp = str(self.db.Users.find_one({"u_id": user_id}, {"$project": {"u_id": 0, "username": 1, "pwd": 0, "picname": 1}}))# {"u_id":0, "username": 1, "pwd": 0, "picname": 1})# + "_" + str(self.db.Alarm.find({"u_id": user_id, "alive": True}, {"u_id":0, "time": 1, "msg": 1, "alive": 0}))
+                            print Cardtmp
+                        if IsFull10 < 10:
+                            #print "<10"
+                            Cardtmp = str(self.db.Users.find_one({"u_id": friendlist[i]}, fields = {"username": True, "picname": True, "_id": False})) + "_" + str(self.db.Alarm.find_one({"u_id": friendlist[i], "alive": True}, fields = {"_id": False, "time": True, "msg": True}))
+                            print Cardtmp
+                            all.append(Cardtmp)
+                except Exception, error: # not yet be his(her) waker
+                    print str(IsWaker)
+                if level2 == False:
+                    print "Already be his(her) waker"
+            level1 = False
+            level2 = False
+        return str(all)
+
+    #================================ Function : Waker : set morning ===============================
+    @cherrypy.expose
     def set_morning(self, wid, wwho, wmsg, wsound):
         print wid, wwho, wmsg, wsound
         # the one you want to wake is allow you to do this! (10 friends)
@@ -146,6 +203,11 @@ class Hello:
             print data
             all.append(data)
         return str(all)
+
+    @cherrypy.expose
+    def data_test(self, data_test):
+        print data_test
+        return "OK i got it"
 # connection to network
 
 cherrypy.quickstart(Hello(), config="config.ini")
