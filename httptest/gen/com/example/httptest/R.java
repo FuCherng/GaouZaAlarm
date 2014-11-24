@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.gaouza_v2;
+package com.example.httptest;
 
 public final class R {
     public static final class attr {
@@ -22,41 +22,24 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_action_discard=0x7f020000;
-        public static final int ic_action_edit=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
+        public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
         public static final int Btn_login=0x7f080002;
-        public static final int action_discard=0x7f080005;
-        public static final int action_edit=0x7f080006;
-        public static final int action_settings=0x7f080007;
-        public static final int textView1=0x7f080003;
-        public static final int timePicker1=0x7f080004;
+        public static final int action_settings=0x7f080003;
         public static final int user_name=0x7f080000;
         public static final int user_pwd=0x7f080001;
     }
     public static final class layout {
-        public static final int activity_login=0x7f030000;
-        public static final int activity_main_m__alarm_request=0x7f030001;
-        public static final int activity_main_m__my_alarm=0x7f030002;
-        public static final int activity_send_alarm=0x7f030003;
-        public static final int activity_wake=0x7f030004;
+        public static final int activity_http_test=0x7f030000;
     }
     public static final class menu {
-        public static final int main_activity_actions=0x7f070000;
-        public static final int main_m__alarm_request=0x7f070001;
-        public static final int main_m__my_alarm=0x7f070002;
-        public static final int send_alarm=0x7f070003;
+        public static final int http_test=0x7f070000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050003;
+        public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
         public static final int hello_world=0x7f050001;
-        public static final int title_activity_main_m__alarm_request=0x7f050002;
-        public static final int title_activity_main_m__my_alarm=0x7f050004;
-        public static final int title_activity_send_alarm=0x7f050005;
-        public static final int title_activity_wake=0x7f050006;
     }
     public static final class style {
         /** 
