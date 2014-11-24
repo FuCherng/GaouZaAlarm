@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class HttpTest extends Activity {
 	
 	Handler handler = new Handler();
-	
+	FTPClient client;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
