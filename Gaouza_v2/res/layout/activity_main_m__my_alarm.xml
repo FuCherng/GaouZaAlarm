@@ -8,18 +8,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.gaouza_v2.MainM_MyAlarm" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
     <TimePicker
         android:id="@+id/timePicker1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="115dp" />
+
+    <EditText
+        android:id="@+id/Alarm_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/timePicker1"
+        android:layout_below="@+id/timePicker1"
+        android:layout_marginTop="62dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
 
 </RelativeLayout>

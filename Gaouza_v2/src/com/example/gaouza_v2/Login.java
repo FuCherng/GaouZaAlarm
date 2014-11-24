@@ -16,6 +16,8 @@ import android.widget.Toast;
 public class Login extends Activity {
 
 	Button Login;
+	TextView UName; 
+	TextView UPwd; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,14 +25,25 @@ public class Login extends Activity {
 		
 		Login = (Button)findViewById(R.id.Btn_login);
 		Login.setOnClickListener(login_btn);
+		
+		
 	    
 		
 	}
 	public OnClickListener login_btn = new OnClickListener() {
 		public void onClick(View v) {
 			Intent gotoMainRequest = new Intent();
+			
+			//gotoMainRequest.setClass(MainM_AlarmRequest.this,  SendAlarm.class);
+			gotoMainRequest.putExtra("UName","fufuhi");
+			gotoMainRequest.putExtra("Uid","001");
+			
+			
 			gotoMainRequest.setClass(Login.this, MainM_AlarmRequest.class);
 			startActivity(gotoMainRequest);
+			
+			
+			
 			
 		}
 	};

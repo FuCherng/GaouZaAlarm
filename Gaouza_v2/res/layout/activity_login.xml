@@ -8,7 +8,7 @@
         android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="username" />
+        android:text="fufuhi" />
 
     <TextView
         android:id="@+id/user_pwd"
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
          android:layout_below="@+id/user_name"
-        android:text="Pwd hahahaha" />
+        android:text="fufuhi" />
 
     <Button
         android:id="@+id/Btn_login"

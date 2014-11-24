@@ -1,11 +1,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <!-- Search, should appear as action button -->
-    <item android:id="@+id/action_discard"
-          android:icon="@drawable/ic_action_discard"
-          android:title="action_discard"
+
+     
+<!-- New Alarm, should always be in the overflow --> 
+     <item android:id="@+id/action_new"
+          android:icon="@drawable/ic_action_new"
+          android:title="action_new"
           android:showAsAction="ifRoom" />
-    <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_edit"
-          android:title="action_edit"
-          android:showAsAction="never" />
+     
+<!-- Go to wake up activity, just for demo --> 
+     <item
+        android:id="@+id/action_edit"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="goto wake up"/>
+
+    
 </menu>

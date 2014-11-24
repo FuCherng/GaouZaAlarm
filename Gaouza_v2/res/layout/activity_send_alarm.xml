@@ -9,8 +9,21 @@
     tools:context="com.example.gaouza_v2.SendAlarm" >
 
     <TextView
+        android:id="@+id/friend_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="Send alarm" />
+
+    <EditText
+        android:id="@+id/send_Message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="92dp"
+        android:ems="10"
+        android:inputType="textMultiLine" >
+
+    </EditText>
 
 </RelativeLayout>
