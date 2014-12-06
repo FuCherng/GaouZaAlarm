@@ -25,10 +25,11 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Btn_login=0x7f080002;
-        public static final int action_settings=0x7f080003;
-        public static final int user_name=0x7f080000;
-        public static final int user_pwd=0x7f080001;
+        public static final int Btn_login=0x7f080000;
+        public static final int ProBar_login=0x7f080002;
+        public static final int action_settings=0x7f080004;
+        public static final int iv01=0x7f080003;
+        public static final int txtTaskResult=0x7f080001;
     }
     public static final class layout {
         public static final int activity_http_test=0x7f030000;
